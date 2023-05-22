@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  <body>
+    <!-- SideBar -->
+    <section class="sidebar" id="sidebar">
+      <article class="moitier">
+        <img src="enval.png" id="textsidebar" alt="" />
+        <nav>
+          <ul>
+            <li class="colorli">
+              <a href="dashboard.html"
+                ><i class="fa-solid fa-chart-simple"></i><span id="textsidebar"> Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="facture.html"
+                ><i class="fa-solid fa-peace"></i><span id="textsidebar"> Facture</span></a
+              >
+            </li>
+            <li>
+              <a href="commande.html"
+                ><i class="fa-solid fa-cart-shopping"></i
+                ><span id="textsidebar">Commande</span> </a
+              >
+            </li>
+            <li>
+              <a href="Suivi.html"
+                ><i class="fa-solid fa-bag-shopping"></i><span id="textsidebar"> Suivi</span></a
+              >
+            </li>
+            <li>
+              <a href="service.html"
+                ><i class="fa-solid fa-comment-dots"></i
+                ><span id="textsidebar"> Service</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </article>
+      <article class="moitie">
+        <nav>
+          <ul class="">
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-gear"></i><span id="textsidebar"> Paramètres</span></a
+              >
+            </li>
+            <li>
+              <a href="index.html"
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i
+                ><span id="textsidebar"> Déconnexion</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </article>
+    </section>
+    <!-- Contenue -->
+    <main class="contenuee">
+      <!-- NavBar -->
+      <header class="navbar">
+        <nav id="burger">
+          <a href="#sidebar" title="burger"><i class="fa-2x fa-solid fa-bars"></i></a>
+        </nav>
+        <div class="navcont">
+          <div class="iconecloche">
+            <i class="fa-regular fa-bell fa-2x"></i>
+            <div class="pointcloche"></div>
+          </div>
+          <div>
+            <img src="avatar.jpg" alt="" />
+          </div>
+        </div>
+      </header>
+      <!-- Corps -->
+      <section class="corp corpp">
+        <nav class="carddash">
+          <div class="titrecardd">
+            <span class="titrecard">Analyses positives</span>
+            <div class="card">
+              <nav class="gouteauu">
+                <i class="eclair fa-2x fa-solid fa-bolt"></i>
+              </nav>
+              <h2>Positive</h2>
+              <canvas id="myChart"></canvas>
+              <h2 class="pourcentage">80%</h2>
+            </div>
+          </div>
+          <div class="titrecardd">
+            <span class="titrecard">Analyses negatives</span>
+            <div class="cards">
+              <nav class="gouteau">
+                <i class="eau fa-2x fa-solid fa-droplet"></i>
+              </nav>
+              <h2>Negative</h2>
+              <canvas id="myChartt"></canvas>
+              <h2 class="pourcentage">50%</h2>
+            </div>
+          </div>
+        </nav>
+        <nav>
+          <div class="mychar"> 
+            <span class="titrecard titrecar">Analyses par mois</span>
+            <div class="barchart">
+                <canvas id="myCharttt"></canvas>
+            </div>
+            
+          </div>
+        </nav>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          datasets: [
+            {
+              data: [80, 20],
+              backgroundColor: ["white", "#dedbdbab"],
+              borderColor: ["white", "#dedbdbab"],
+            },
+          ],
+        },
+        options: {
+          circumference: 290,
+          rotation: 215,
+          cutout: "80%",
+          aspectRatio: 2,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      });
+    </script>
+
+    <script>
+      const ct = document.getElementById("myChartt");
+
+      new Chart(ct, {
+        type: "doughnut",
+        data: {
+          datasets: [
+            {
+              data: [50, 50],
+              backgroundColor: ["#4A96A6", "#dedbdbab"],
+              borderColor: ["#4A96A6", "#dedbdbab"],
+            },
+          ],
+
+          labels: ["Red", "Yellow"],
+        },
+        options: {
+          circumference: 290,
+          rotation: 215,
+          cutout: "80%",
+          aspectRatio: 2,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      });
+    </script>
+
+<script>
+    const c = document.getElementById('myCharttt');
+  
+    new Chart(c, {
+      type: 'bar',
+      data: {
+        labels: ['JAN', 'FEV', 'MARS', 'AVRIL', 'MAI', 'JUIN','JUL','AOUT','SEPT','OCT','NOV','DEC'],
+        datasets: [{
+          label: '',
+          data: [135, 100, 157, 85, 135, 55, 110, 135, 135, 135, 135, 135,],
+          borderWidth: 1,
+          backgroundColor:"white", 
+          hoverBackgroundColor:"#4A96A6"
+        }]
+      },
+      options: {
+        plugins:{
+          legend:{
+            display: false,
+        },
+          tooltip:{
+            callbacks: {
+                    labelPointStyle: function(context) {
+                        return {
+                            pointStyle: 'triangle',
+                            rotation: 0
+                        };
+                    }
+                }
+          },
+      },
+        maintainAspectRatio:false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            display:false,
+          },
+          x:{
+            grid:{
+              color:"white",
+              tickColor:"transparent",
+            },  
+            
+            border:{
+              display: false,
+            },
+           
+            ticks:{
+              font:{
+               size:13,
+              },
+            }
+            
+          }
+        }
+      }
+    });
+  </script>
+  </body>
+</html>
