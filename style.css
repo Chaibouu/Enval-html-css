@@ -721,4 +721,21 @@ table{
     width:70%; 
     height: 110px; 
 }
+/* connexion */
+.connex input{
+    margin-top: 60px;
+    height: 30px;
+    width: 450px;
+    border-radius: 5px;
+    font-size: larger;
+    border: 1px solid;
+}
+.connex a input{
+    background-color: #4A96A6;
+    color: white;
+    font-size: 20px;
+    border: 2px solid #4A96A6;
+    height: 50px;
+    width: 470px;
+}
 }
