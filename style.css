@@ -28,7 +28,7 @@ form{
 }
 .connex input{
     margin-top: 60px;
-    height: 50px;
+    height: 30px;
     width: 450px;
     border-radius: 5px;
     font-size: larger;
@@ -39,6 +39,7 @@ form{
     color: white;
     font-size: 20px;
     border: 2px solid #4A96A6;
+    height: 50px;
 }
 .label{
     width: 85%;
