@@ -622,6 +622,22 @@ table{
     }
 }
 /* ----------mediaquery---------- */
+@media screen and (max-width: 425px){
+   /* connexion */
+.connex input{
+    margin-top: 60px;
+    height: 30px;
+    width: 380px;
+}
+.connex a input{
+    background-color: #4A96A6;
+    color: white;
+    font-size: 20px;
+    border: 2px solid #4A96A6;
+    height: 50px;
+    width: 400px;
+}
+}
 
 @media screen and (max-width: 375px){
     #sidebar{
