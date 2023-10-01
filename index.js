@@ -43,21 +43,31 @@ connexion.addEventListener('click',()=>{
                     connexion.parentElement.href = "dashboard.html"
                 }
                 else{
-                    
+                    email.disabled=true;
+                    password.disabled=true;
+
+                   setTimeout(()=>{
                     notification.style.display = 'block';
                     notification.firstElementChild.textContent = 'Compte bloqué';
                     notification.lastElementChild.textContent = 'Votre compte est bloqué';
                     setTimeout(()=>{
                         notification.style.display = 'none';
-                    },3000)
-
-                    email.disabled=true;
-                    password.disabled=true;
+                    },4000)
+                   },2000)
+                    
                     setTimeout(()=>{
-                        email.disabled = false;
-                        password.disabled = false;
-                    },300000)
-                    a = 0
+                        notification.style.display = 'block';
+                        notification.firstElementChild.style.backgroundColor = 'green'
+                        notification.firstElementChild.textContent = 'Timer déblockage';
+                        notification.lastElementChild.textContent = 'Veuillez patient après le temp';
+                        setTimeout(()=>{
+                            email.disabled = false;
+                            password.disabled = false;
+                            notification.style.display = 'none';
+                            
+                        },300000)
+                        a = 0
+                    },7000)
                 }
                 
             }
