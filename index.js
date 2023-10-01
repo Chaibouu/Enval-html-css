@@ -2,19 +2,19 @@ let email = document.querySelector('#email');
 let password = document.querySelector('#password');
 let connexion = document.querySelector('#connexion');
 let notification = document.querySelector('.notification');
+let timerr = document.querySelector('.timerr');
 
 if (!localStorage.getItem('key')) {
     localStorage.setItem('key',JSON.stringify([]))
 }
 let users = JSON.parse(localStorage.getItem('key'));
 let a = 0;
-let seconde = 0;
-let minute = 0;
+let seconde = 1;
+let minute = 5;
+let time = 0;
+let timeout;
 
-// fonction pour le minuteur
-const chronos = ()=> {
-    
-}
+
 
 // button ce connecter 
 connexion.addEventListener('click',()=>{
@@ -51,7 +51,39 @@ connexion.addEventListener('click',()=>{
                 else{
                     email.disabled=true;
                     password.disabled=true;
-
+                    // fonction pour le minuteur
+                    const chronos = ()=>{
+                        if (minute == 0 && seconde == 0) {
+                          clearTimeout(timeout);
+                        }
+                        else{
+                          minute = parseInt(minute);
+                          seconde = parseInt(seconde);
+                        
+                          if (seconde > 0) {
+                            seconde--;
+                          } else {
+                            if (minute > 0) {
+                              minute--;
+                              seconde = 59;
+                            } else {
+                                clearTimeout(timeout);
+                                return;
+                            }
+                          }
+                      
+                           if (seconde < 10) {
+                            seconde = "0" + seconde;
+                           }
+                           if (minute < 10) {
+                            minute = "0" + minute;
+                           }
+                       
+                           notification.lastElementChild.textContent = `${minute}:${seconde}`
+                           timeout = setTimeout(chronos,1000);
+                        }
+                    };
+                    // ==================================
                    setTimeout(()=>{
                     notification.style.display = 'block';
                     notification.firstElementChild.textContent = 'Compte bloqué';
@@ -63,15 +95,17 @@ connexion.addEventListener('click',()=>{
                     
                     setTimeout(()=>{
                         notification.style.display = 'block';
-                        notification.firstElementChild.style.backgroundColor = 'green'
+                        chronos();
+                        notification.firstElementChild.style.backgroundColor = '#4A96A6'
                         notification.firstElementChild.textContent = 'Timer déblockage';
-                        notification.lastElementChild.textContent = 'Veuillez patient après le temp';
+                        notification.lastElementChild.style.fontSize = '30px'
+
                         setTimeout(()=>{
                             email.disabled = false;
                             password.disabled = false;
                             notification.style.display = 'none';
                             
-                        },300000)
+                        },360000)
                         a = 0
                     },7000)
                 }
