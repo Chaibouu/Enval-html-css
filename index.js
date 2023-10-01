@@ -7,8 +7,14 @@ if (!localStorage.getItem('key')) {
     localStorage.setItem('key',JSON.stringify([]))
 }
 let users = JSON.parse(localStorage.getItem('key'));
-let a = 0
+let a = 0;
+let seconde = 0;
+let minute = 0;
 
+// fonction pour le minuteur
+const chronos = ()=> {
+    
+}
 
 // button ce connecter 
 connexion.addEventListener('click',()=>{
@@ -81,3 +87,4 @@ connexion.addEventListener('click',()=>{
     alert('veuillez entrer un utilisateur')
    }
 })
+
