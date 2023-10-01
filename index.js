@@ -38,13 +38,29 @@ connexion.addEventListener('click',()=>{
             }
             if(a>=3){
                 let answer = prompt('La question secret quel est votre jeux préféré : ')
-                console.log(answer);
-                email.disabled=true;
-                password.disabled=true;
-                a = 0
+                let result = users.find((el)=> el.answer === answer)
+                if (result) {
+                    connexion.parentElement.href = "dashboard.html"
+                }
+                else{
+                    
+                    notification.style.display = 'block';
+                    notification.firstElementChild.textContent = 'Compte bloqué';
+                    notification.lastElementChild.textContent = 'Votre compte est bloqué';
+                    setTimeout(()=>{
+                        notification.style.display = 'none';
+                    },3000)
+
+                    email.disabled=true;
+                    password.disabled=true;
+                    setTimeout(()=>{
+                        email.disabled = false;
+                        password.disabled = false;
+                    },300000)
+                    a = 0
+                }
+                
             }
-           
-console.log(a);
             
         }
         else{
