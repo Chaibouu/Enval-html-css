@@ -409,7 +409,12 @@ table{
   }
   tr:hover{
     background-color: rgb(234, 234, 234);
-   color: white;
+    color: #4A96A6;
+    
+}
+  tr:hover td{
+    background-color: rgb(234, 234, 234);
+    color: #4A96A6;
     
 }
 
@@ -419,11 +424,27 @@ table{
     color: #4A96A6;
     border: 1px solid #4A96A6;
   }
-  
-  /* Commande */
-  .rr{
-   color: red;
+  .entetefacture{
+    background-color: #4A96A6;
+    color: #fff;
   }
+  .entetefacture>th{
+    color: #fff;
+  }
+  .entetefacture:hover{
+    color: #fff;
+    background-color: #4A96A6;
+  }
+  .iconfiltre{
+    visibility: hidden;
+  }
+  .entetefacture>th:hover{
+    cursor: pointer;
+  }
+  .entetefacture>th:hover .iconfiltre{
+    visibility: visible;
+  }
+  
   /* service */
   .form{
     width: 100%;
