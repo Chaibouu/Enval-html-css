@@ -43,7 +43,7 @@ const factures = [
         facture: "00007",
         laboratoire : "Enval",
         date : "13/03/2023" 
-    },
+    }
 ]
 
 
@@ -103,13 +103,70 @@ const commandes = [
         laboratoire:"ADU",
         date:"18/03/2023",
         statut: "Terminée",
-    },
+    }
 ]
 
 // donées de suivi
 
 const suivis = [
     {
-        
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
     },
+    {
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
+    },
+    {
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
+    },
+    {
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
+    },
+    {
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
+    },
+    {
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
+    },
+    {
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
+    },
+    {
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
+    },
+    {
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
+    },
+    {
+        lot:"TE232003001",
+        etat:"Reçu",
+        date: "12/03/2023",
+        rapport:"Disponnible",
+    }
 ]
