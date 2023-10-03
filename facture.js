@@ -1,4 +1,5 @@
 let tbodyfacture = document.querySelector('.tbodyfacture');
+let searchfacture = document.querySelector('#searchfacture');
 
 
 // afficher les donées de facture
