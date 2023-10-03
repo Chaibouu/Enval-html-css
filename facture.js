@@ -11,4 +11,7 @@ factures.forEach(element => {
                                     <td class="TR text"><button>voir</button></td>
                                 </tr>`
 });
-    
+//button recherche
+searchfacture.addEventListener('input', ()=>{
+    console.log(searchfacture.value);
+}); 
