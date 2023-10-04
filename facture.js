@@ -12,13 +12,32 @@ factures.forEach(element => {
                                 </tr>`
 });
 //button recherche
-searchfacture.addEventListener('enter', () => {
-    console.log(searchfacture.value);
+searchfacture.addEventListener('input', () => {
     let search = '';
     search = factures.filter((el) =>
-        el.laboratoire.toUpperCase().split(' ').includes(searchfacture.value.toUpperCase())
+        el.laboratoire.toUpperCase().includes(searchfacture.value.toUpperCase().split(' '))
     );
-    console.log(search);
+    if(searchfacture.value != ''){
+        tbodyfacture.innerHTML = ''
+         search.forEach(element => {
+        tbodyfacture.innerHTML += `<tr  >
+                                        <td class="tr text">${element.facture}</td>
+                                        <td class="text">${element.laboratoire}</td>
+                                        <td class="text">${element.date}</td>
+                                        <td class="TR text"><button>voir</button></td>
+                                    </tr>`
+    });
+    }
+    else{
+        factures.forEach(element => {
+            tbodyfacture.innerHTML += `<tr  >
+                                            <td class="tr text">${element.facture}</td>
+                                            <td class="text">${element.laboratoire}</td>
+                                            <td class="text">${element.date}</td>
+                                            <td class="TR text"><button>voir</button></td>
+                                        </tr>`
+        }); 
+    }
 });
 
 
