@@ -12,7 +12,6 @@ factures.forEach(element => {
                                 </tr>`
 });
 //button recherche
-
 searchfacture.addEventListener('enter', () => {
     console.log(searchfacture.value);
     let search = '';
