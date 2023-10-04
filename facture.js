@@ -12,6 +12,38 @@ factures.forEach(element => {
                                 </tr>`
 });
 //button recherche
-searchfacture.addEventListener('input', ()=>{
+// searchfacture.addEventListener('input', ()=>{
+//     console.log(searchfacture.value);
+//     let search ='';
+//     search = factures.filter((el)=> el.laboratoire.toUpperCase().split('').include(searchfacture.value.toUpperCase().split('')))
+//     console.log(search);
+
+// }); 
+
+
+
+// Écoutez l'événement "input" sur l'élément
+searchfacture.addEventListener('input', () => {
     console.log(searchfacture.value);
-}); 
+    let search = '';
+    search = factures.filter((el) =>
+        el.laboratoire.toUpperCase().split(' ').includes(searchfacture.value.toUpperCase())
+    );
+    console.log(search);
+});
+
+
+
+
+// // Écoutez l'événement "input" sur l'élément
+// searchfacture.addEventListener('input', () => {
+//     console.log(searchfacture.value);
+//     let search = '';
+//     search = factures.filter((el) =>
+//         el.laboratoire.toUpperCase().split(' ') // Split par espace
+//         .some(word => word == searchfacture.value.toUpperCase()) // Vérifie si au moins un mot correspond
+//     );
+//     console.log(search);
+// });
+
+
