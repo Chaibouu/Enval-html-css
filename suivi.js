@@ -1,5 +1,5 @@
 let tbodysuivi = document.querySelector('.tbodysuivi');
-console.log(tbodysuivi);
+let searchsuivi = document.querySelector('#searchsuivi');
 
 // afficher les donées de suivi
 suivis.forEach(element => {
@@ -14,3 +14,32 @@ suivis.forEach(element => {
                             </tr>`
 });
     
+//button recherche
+searchsuivi.addEventListener('input', () => {
+  let search = '';
+  search = suivis.filter((el) =>
+      el.rapport.toUpperCase().includes(searchsuivi.value.toUpperCase().split(' '))
+  );
+  if(searchsuivi.value != ''){
+        tbodysuivi.innerHTML = ''
+        search.forEach(element => {
+        tbodysuivi.innerHTML += `<tr  >
+                                      <td class="tr text">${element.facture}</td>
+                                      <td class="text">${element.laboratoire}</td>
+                                      <td class="text">${element.date}</td>
+                                      <td class="TR text"><button>voir</button></td>
+                                  </tr>`
+  });
+  }
+  else{
+      factures.forEach(element => {
+        tbodysuivi.innerHTML += `<tr  >
+                                          <td class="tr text">${element.facture}</td>
+                                          <td class="text">${element.laboratoire}</td>
+                                          <td class="text">${element.date}</td>
+                                          <td class="TR text"><button>voir</button></td>
+                                      </tr>`
+      }); 
+  }
+});
+
