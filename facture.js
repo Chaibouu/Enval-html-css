@@ -12,18 +12,8 @@ factures.forEach(element => {
                                 </tr>`
 });
 //button recherche
-// searchfacture.addEventListener('input', ()=>{
-//     console.log(searchfacture.value);
-//     let search ='';
-//     search = factures.filter((el)=> el.laboratoire.toUpperCase().split('').include(searchfacture.value.toUpperCase().split('')))
-//     console.log(search);
 
-// }); 
-
-
-
-// Écoutez l'événement "input" sur l'élément
-searchfacture.addEventListener('input', () => {
+searchfacture.addEventListener('enter', () => {
     console.log(searchfacture.value);
     let search = '';
     search = factures.filter((el) =>
