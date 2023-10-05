@@ -10,7 +10,7 @@ suivis.forEach(element => {
                               <td class="text">${element.date}</td>
                               <td class="text rap">${element.rapport}</td>
                               <td class="TR text">
-                                <a class="voir"><button>voir</button></a>
+                                <a href="suividetail.html" class="voir"><button>voir</button></a>
                               </td>
                             </tr>`
       
