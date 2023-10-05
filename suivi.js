@@ -26,7 +26,9 @@ voir.forEach(element => {
       localStorage.setItem('cles',JSON.stringify(titrerapport))
     }
     else{
-      alert('Rapport Non Disponnible')
+      alert('Rapport Non Disponnible');
+      titrerapport = "Non Disponnible";
+      localStorage.setItem('cles',JSON.stringify(titrerapport))
     }
   }) 
 });
