@@ -1,6 +1,7 @@
 let tbodysuivi = document.querySelector('.tbodysuivi');
 let searchsuivi = document.querySelector('#searchsuivi');
 
+
 // afficher les donées de suivi
 suivis.forEach(element => {
     tbodysuivi.innerHTML += `<tr>
@@ -9,11 +10,25 @@ suivis.forEach(element => {
                               <td class="text">${element.date}</td>
                               <td class="text">${element.rapport}</td>
                               <td class="TR text">
-                                <a href="suividetail.html"><button>voir</button></a>
+                                <a class="voir"><button>voir</button></a>
                               </td>
                             </tr>`
+      
 });
-    
+let voir = document.querySelector('.voir');
+//button voir page suivi details
+voir.addEventListener('click', () =>{
+  let tiitre ='';
+  suivis.forEach(el, index =>{
+    if(el.rapport === "Disponnible"){
+      tiitre = el.lot;
+      console.log(index);
+    }
+  })
+}) 
+ 
+
+
 //button recherche
 searchsuivi.addEventListener('input', () => {
   let search = '';
@@ -29,7 +44,7 @@ searchsuivi.addEventListener('input', () => {
                                     <td class="text">${element.date}</td>
                                     <td class="text">${element.rapport}</td>
                                     <td class="TR text">
-                                      <a href="suividetail.html"><button>voir</button></a>
+                                      <a href="suividetail.html" class="voir"><button>voir</button></a>
                                     </td>
                                   </tr>`
       });
@@ -42,7 +57,7 @@ searchsuivi.addEventListener('input', () => {
                                 <td class="text">${element.date}</td>
                                 <td class="text">${element.rapport}</td>
                                 <td class="TR text">
-                                  <a href="suividetail.html"><button>voir</button></a>
+                                  <a href="suividetail.html" class="voir"><button>voir</button></a>
                                 </td>
                               </tr>`
   });
