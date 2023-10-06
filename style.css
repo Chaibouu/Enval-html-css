@@ -18,7 +18,107 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
-
+/* parametrès */
+.entetepara{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: end;
+}
+.btnpara{
+    display: flex;
+    align-items: center;
+}
+.btnModifierlecompte{
+    font-size: 16px;
+    cursor: pointer;
+    padding:10px
+}
+.btnSupprimerlecompte{
+    background-color: red;
+    margin-left: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    padding:10px
+}
+.btnSupprimerlecompte:hover{
+    border: 1px solid red;
+    color: red;
+    margin-left: 20px;
+    font-size: 16px;
+}
+.btnretour{
+    background-color: white;
+    color: rgb(148, 225, 34);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 1.5s ease-in-out;
+}
+.btnretour:hover{
+    background-color: transparent;
+    color: rgb(148, 225, 34);
+    transform:scale(1.2);
+    border: none;
+    
+}
+.paraa{
+    width: 60%;
+}
+.paraa h1{
+    margin-left: 30px;
+    font-size: 35px;
+    color: rgba(128, 128, 128, 0.601);
+}
+.tipara{
+    margin-left: 10px;
+    font-size: 25px;
+    color: rgba(128, 128, 128, 0.601);
+}
+.corpspara{
+    display: flex;
+    margin-top: 30px;
+}
+.corpspara form>input{
+    width: 95%;
+    background-color: #e8e6e6c0;
+    border-radius: 5px;
+    font-size: larger;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid rgba(227, 226, 226, 0.421);
+}
+.corpspara form>label{
+    width: 95%;
+    font-size: 25px;
+    color: rgba(128, 128, 128, 0.601);
+}
+.corpspara form>input:focus{
+    outline-color: greenyellow;
+  }
+.avatar{
+    border-radius: 100%;
+}
+.containerform{
+    width: 70%;
+}
+.containeravatar{
+    width: 40%;
+}
+.containeravatar span>img{
+    width: 80%;
+}
+.containeravatar div{
+    width: 100%;
+    text-align: center;
+}
+.containeravatar div>button{
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+}
+.containeravatar div>button:hover{
+    margin-left: 0px;
+}
 
 /* ============================================================== */
 /* Body */
