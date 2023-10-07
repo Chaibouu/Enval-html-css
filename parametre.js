@@ -1,4 +1,4 @@
-let textarea = document.querySelector('.textarea');
+let textarea = document.querySelector('#textarea');
 let avatar = document.querySelector('#avatar');
 let inputFile = document.querySelector('#inputFile');
 let userName = document.querySelector('#userName');
@@ -12,39 +12,32 @@ let supphoto = document.querySelector('.supphoto');
 let users = JSON.parse(localStorage.getItem("compte"))
 modifphoto.addEventListener('click',()=>{
     inputFile.click();
-    users.profil= URL.createObjectURL(inputFile.files[0]);
-    localStorage.setItem('compte',JSON.stringify(users))
+    
 })
 inputFile.addEventListener('change',()=>{
     let file = inputFile.files[0];
     avatar.src = URL.createObjectURL(file);
     loginProfil.src = URL.createObjectURL(file);
+    users.profil= URL.createObjectURL(inputFile.files[0]);
+    localStorage.setItem('compte',JSON.stringify(users))
 })
 
-showavatar();
+
 let showavatar = ()=>{
-    // avatar.src = URL.createObjectURL(inputFile.files[0]);
-    console.log('xcvsdvsdwvgsfdgvsdwv sdvds')
+    loginProfil.src = users.profil;
+    avatar.profil = users.profil;
+    console.log(users.profil)
 }
+showavatar();
+
+
 
 //button modifier username email biographie
 btnEnvoyer.addEventListener('click',()=>{
-    let user = users.userName;
-    let pass = users.password;
-    let answer = users.answer;
-    let email = users.email;
-    let biographie = users.biographie;
-    let profil = users.profil
-    user={
-        userName: userName.value,
-        password: pass,
-        email: email.value,
-        answer: answer,
-        profil: profil,
-        biographie : biographie
-    }
-    users.push(user)
+    
+    users.userName = userName.value;
+    users.email = email.value;
+    users.biographie = textarea.value;
+    localStorage.setItem('compte',JSON.stringify(users))
 
 })
-
-
