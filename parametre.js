@@ -24,7 +24,7 @@ inputFile.addEventListener('change',()=>{
 showavatar();
 let showavatar = ()=>{
     // avatar.src = URL.createObjectURL(inputFile.files[0]);
-    console.log('jjjjjj')
+    console.log('xcvsdvsdwvgsfdgvsdwv sdvds')
 }
 
 //button modifier username email biographie
