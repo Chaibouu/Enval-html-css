@@ -87,6 +87,14 @@
     margin: 10px;
     border: 2px solid rgba(227, 226, 226, 0.421);
 }
+.textareaa{
+    margin-top: 20px;
+    width: 98%;
+}
+.corpspara form{
+    width: 95%;
+
+}
 .corpspara form>label{
     width: 95%;
     font-size: 25px;
@@ -118,6 +126,11 @@
 }
 .containeravatar div>button:hover{
     margin-left: 0px;
+}
+.btnEnvoyer{
+    width: 98%;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 /* ============================================================== */

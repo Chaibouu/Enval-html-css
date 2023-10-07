@@ -1,2 +1,3 @@
 let textarea = document.querySelector('.textarea');
-CKEDITOR.replace( 'editor1' );
+let avatar = document.querySelector('.avatar');
+let modifphoto = document.querySelector('.modifphoto');
