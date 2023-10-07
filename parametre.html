@@ -107,7 +107,10 @@
                     <label for="">Email</label>
                     <input type="email" placeholder="JohnDoe@gmail.com">
                     <label for="">Biographie</label>
-                    <textarea title="textarea" name="" id="" cols="30" rows="10"></textarea>
+                    <textarea title="textarea" id="textarea" name="content" id="" cols="30" rows="10"></textarea>
+                    <div id="editor">
+                      <p>This is some sample content.</p>
+                    </div>
                 </form>
 
             </div>
@@ -124,6 +127,32 @@
       </section>
     </main>
 
+
+    <script>
+      CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
+                // https://ckeditor.com/docs/ckeditor5/latest/features/toolbar/toolbar.html#extended-toolbar-configuration-format
+                toolbar: {
+                    items: [
+                        'exportPDF','exportWord', '|',
+                        'findAndReplace', 'selectAll', '|',
+                        'heading', '|',
+                        'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                        'bulletedList', 'numberedList', 'todoList', '|',
+                        'outdent', 'indent', '|',
+                        'undo', 'redo',
+                        '-',
+                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                        'alignment', '|',
+                        'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                        'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                        'textPartLanguage', '|',
+                        'sourceEditing'
+                    ],
+                    shouldNotGroupWhenFull: true
+                },
+              });
+  </script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 
   </body>
 </html>
