@@ -4,8 +4,47 @@ let connexion = document.querySelector('#connexion');
 let notification = document.querySelector('.notification');
 let timerr = document.querySelector('.timerr');
 
+
+let user={
+    userName:'',
+    password:'',
+    email:'',
+    answer:'',
+    profil:'',
+    biographie:'',
+}
+let userss =[
+    {
+        userName:'chaibou',
+        password:'chaibou',
+        email:'chaibouabdoulwahab@gmail.com',
+        answer:'metal',
+        profil:'',
+        biographie:'dev junior',
+    },
+    {
+        userName:'admin',
+        password:'admin',
+        email:'admin@gmail.com',
+        answer:'admin',
+        profil:'',
+        biographie:'admin',
+    },
+    {
+        userName:'tt',
+        password:'tt',
+        email:'tt@gmail.com',
+        answer:'tt',
+        profil:'',
+        biographie:'tt',
+    }
+]
+
 if (!localStorage.getItem('key')) {
-    localStorage.setItem('key',JSON.stringify([]))
+    localStorage.setItem('key',JSON.stringify(userss))
+}
+if (!localStorage.getItem('compte')) {
+    localStorage.setItem('compte',JSON.stringify(user))
 }
 let users = JSON.parse(localStorage.getItem('key'));
 let a = 0;
@@ -20,10 +59,20 @@ let timeout;
 connexion.addEventListener('click',()=>{
    if (email.value !=='') {
         if (password.value !=='') {
-            let verifUser = users.find((el)=> el.username === email.value);
+            let verifUser = users.find((el)=> el.userName === email.value);
             let verifPassword = users.find((el)=> el.password === password.value);
+            let verifCompte = users.find((el)=> el.password === password.value && el.userName === email.value);
             if(verifUser && verifPassword){
-                connexion.parentElement.href = "dashboard.html"
+                connexion.parentElement.href = "dashboard.html";
+                user={
+                    userName: verifCompte.userName,
+                    password: verifCompte.password,
+                    email: verifCompte.email,
+                    answer: verifCompte.answer,
+                    profil: verifCompte.profil,
+                    biographie: verifCompte.biographie,
+                }
+                localStorage.setItem('compte',JSON.stringify(user))
             }
             
             if(!verifUser){

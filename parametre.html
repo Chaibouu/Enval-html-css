@@ -82,7 +82,7 @@
             <div class="pointcloche"></div>
           </div>
           <div>
-            <img src="avatar.jpg" alt="" />
+            <img src="avatar.jpg" id="loginProfil" alt="" />
           </div> 
         </div>
       </header>
@@ -103,14 +103,14 @@
                 <h2 class="tipara">Modifier le profil</h2>
                 <form action="">
                     <label for="">Nom</label>
-                    <input type="text" placeholder="John Doe">
+                    <input type="text" placeholder="John Doe" id="userName">
                     <label for="">Email</label>
-                    <input type="email" placeholder="JohnDoe@gmail.com">
+                    <input type="email" placeholder="JohnDoe@gmail.com" id="email">
                     <label for="">Biographie</label>
                     <div class="textareaa">
                       <textarea title="textarea" id="textarea" name="textarea" id="" cols="30" rows="10"></textarea>
                     </div>
-                    <button class="btnEnvoyer">Envoyer</button>
+                    <button class="btnEnvoyer" id="btnEnvoyer">Envoyer</button>
                 </form>
 
             </div>
@@ -118,6 +118,7 @@
                 <h2 class="tipara">Ton Avatar</h2>
                 <div>
                     <span class="avatar"><img src="avatar.jpg" alt="" id="avatar" /></span>
+                    <input type="file" id="inputFile" hidden ="hidden">
                     <button class="btnModifierlecompte modifphoto">Modifier la photo</button>
                     <button class="btnSupprimerlecompte supphoto">Supprimer la photo</button>
                 </div>
@@ -128,9 +129,9 @@
     </main>
 
     <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
-    <script>
+    <!-- <script>
       CKEDITOR.replace( 'textarea' );
-    </script>
+    </script> -->
     <script src="parametre.js"></script>
   </body>
 </html>
