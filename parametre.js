@@ -106,7 +106,7 @@ supphoto.addEventListener('click',()=>{
 // button renvoyer a la page d'acceuil
 btnretour.addEventListener("click", ()=> {
     //la méthode window.location.href pour rediriger vers la page d'accueil
-    window.location.href = "http://127.0.0.1:5502/dashboard.html";
+    window.location.href = "dashboard.html";
     
 });
 
@@ -122,6 +122,7 @@ btnEnvoyerPassword.addEventListener('click',()=>{
             if(confirmation.value != ''){
                 if(nouveauMotDePasse.value === confirmation.value){
                     alert('mot de passe modifier')
+                    users.password
                 }
                 else{
                     alert("Veuillez entrer le même mot de passe")
