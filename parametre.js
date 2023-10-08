@@ -18,14 +18,21 @@ inputFile.addEventListener('change',()=>{
     let file = inputFile.files[0];
     avatar.src = URL.createObjectURL(file);
     loginProfil.src = URL.createObjectURL(file);
-    users.profil= URL.createObjectURL(inputFile.files[0]);
-    localStorage.setItem('compte',JSON.stringify(users))
-})
 
+    const reader =  new FileReader();
+    reader.addEventListener('load',()=>{
+        users.profil = reader.result
+        localStorage.setItem('compte',JSON.stringify(users))
+    })
+
+    // users.profil= URL.createObjectURL(inputFile.files[0]);
+    reader.readAsDataURL(file)
+
+})
 
 let showavatar = ()=>{
     loginProfil.src = users.profil;
-    avatar.profil = users.profil;
+    avatar.src = users.profil;
     console.log(users.profil)
 }
 showavatar();

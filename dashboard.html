@@ -82,7 +82,7 @@
             <div class="pointcloche"></div>
           </div>
           <div>
-            <img src="avatar.jpg" alt="" />
+            <img src="avatar.jpg" id="loginProfil" alt="" />
           </div>
         </div>
       </header>
@@ -239,6 +239,17 @@
         }
       }
     });
+  </script>
+  <script>
+    let loginProfil = document.querySelector('#loginProfil');
+    // afficher la photo de profil
+    let users = JSON.parse(localStorage.getItem("compte"))
+    let showavatar = ()=>{
+      loginProfil.src = users.profil;
+      console.log(users.profil)
+    }
+    showavatar();
+
   </script>
   </body>
 </html>

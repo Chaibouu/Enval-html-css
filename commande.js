@@ -1,5 +1,6 @@
 let tbodycommande = document.querySelector('.tbodycommande');
 let searchcommande = document.querySelector('#searchcommande');
+let loginProfil = document.querySelector('#loginProfil');
 
 // afficher les donées de commande
 commandes.forEach(el => {
@@ -76,3 +77,12 @@ searchcommande.addEventListener('input', () => {
   });
   }
 });
+
+
+// afficher la photo de profil
+let users = JSON.parse(localStorage.getItem("compte"))
+let showavatar = ()=>{
+  loginProfil.src = users.profil;
+  console.log(users.profil)
+}
+showavatar();

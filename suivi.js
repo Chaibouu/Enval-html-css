@@ -1,5 +1,6 @@
 let tbodysuivi = document.querySelector('.tbodysuivi');
 let searchsuivi = document.querySelector('#searchsuivi');
+let loginProfil = document.querySelector('#loginProfil');
 
 let titrerapport = ''
 // afficher les donées de suivi
@@ -77,3 +78,10 @@ searchsuivi.addEventListener('input', () => {
   }
 });
 
+// afficher la photo de profil
+let users = JSON.parse(localStorage.getItem("compte"))
+let showavatar = ()=>{
+  loginProfil.src = users.profil;
+  console.log(users.profil)
+}
+showavatar();
