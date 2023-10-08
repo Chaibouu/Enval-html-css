@@ -13,6 +13,10 @@ let btnModifierlecompte = document.querySelector('.btnModifierlecompte');
 let btnSupprimerlecompte = document.querySelector('.btnSupprimerlecompte');
 let notificationPassword = document.querySelector('.notificationPassword');
 let arriereTransparent = document.querySelector('.arriereTransparent');
+let ancienMotDePasse = document.querySelector('#ancienMotDePasse');
+let nouveauMotDePasse = document.querySelector('#nouveauMotDePasse');
+let confirmation = document.querySelector('#confirmation');
+let btnEnvoyerPassword = document.querySelector('#btnEnvoyerPassword');
 
 
 let users = JSON.parse(localStorage.getItem("compte"))
@@ -110,4 +114,28 @@ btnretour.addEventListener("click", ()=> {
 btnModifierlecompte.addEventListener('click',()=>{
     notificationPassword.style.display = "block";
     arriereTransparent.style.display = "block";
+})
+// button envoyer mot de passe modifier
+btnEnvoyerPassword.addEventListener('click',()=>{
+    if(ancienMotDePasse.value != ''){
+        if(nouveauMotDePasse.value != ''){
+            if(confirmation.value != ''){
+                if(nouveauMotDePasse.value === confirmation.value){
+                    alert('mot de passe modifier')
+                }
+                else{
+                    alert("Veuillez entrer le même mot de passe")
+                }
+            }
+            else{
+                alert("Veuillez confirmer le nouveau mot de passe")
+            }
+        }
+        else{
+            alert("Entrer le nouveau mot de passe")
+        }
+    }
+    else{
+        alert("Entrer l'ancien mot de passe")
+    }
 })
