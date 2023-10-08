@@ -6,6 +6,7 @@ let timerr = document.querySelector('.timerr');
 
 
 let user={
+    id:0,
     userName:'',
     password:'',
     email:'',
@@ -15,6 +16,7 @@ let user={
 }
 let userss =[
     {
+        id: 1,
         userName:'chaibou',
         password:'chaibou',
         email:'chaibouabdoulwahab@gmail.com',
@@ -23,6 +25,7 @@ let userss =[
         biographie:'dev junior',
     },
     {
+        id: 2,
         userName:'admin',
         password:'admin',
         email:'admin@gmail.com',
@@ -31,6 +34,7 @@ let userss =[
         biographie:'admin',
     },
     {
+        id: 3,
         userName:'tt',
         password:'tt',
         email:'tt@gmail.com',
@@ -65,6 +69,7 @@ connexion.addEventListener('click',()=>{
             if(verifUser && verifPassword){
                 connexion.parentElement.href = "dashboard.html";
                 user={
+                    id: verifCompte.id,
                     userName: verifCompte.userName,
                     password: verifCompte.password,
                     email: verifCompte.email,

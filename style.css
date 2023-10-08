@@ -11,6 +11,7 @@ body{
     top: 10%;
     right: 30px;
     display: none;
+    z-index: 2;
 }
 .notification>h3{
     background-color: rgba(245, 77, 77, 0.926);
@@ -199,9 +200,7 @@ body{
     margin-top: 10px;
     cursor: pointer;
 }
-.textCenter{
-    /* background:red */
-}
+
 /* ============================================================== */
 /* Body */
 body{
@@ -316,6 +315,7 @@ li:hover a, .colorli a{
 }
 .moitier{
     height:50vh;
+    z-index: 1;
 }
 /* -------------------------------------------- */
 
@@ -324,7 +324,7 @@ li:hover a, .colorli a{
     margin-left: 17%;
     background-color:#c0e2ea;
     width: 83%;
-    height: 100vh;
+    min-height: 100vh;
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 10px;
@@ -821,9 +821,9 @@ table{
     button{
          padding: 3% 18%;
          font-size : 14px;
-       }
+    }
     
-       table, th, td {
+    table, th, td {
         border: 1px solid #333;
         border-collapse: collapse;
         text-align: left;
@@ -980,6 +980,21 @@ table{
     height: 50px;
     width: 340px;
 }
+.corp{
+    margin-left: 5px;
+    
+}
+table, th, td {
+    border: 1px solid #333;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 18px;
+    color: gray;
+}
+td,th{
+    padding:  1px;
+    align-items: center;
+  }
 /* .a-ferme{
     position: absolute;
     width: 100%;

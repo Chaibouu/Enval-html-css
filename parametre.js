@@ -32,9 +32,9 @@ inputFile.addEventListener('change',()=>{
     const reader =  new FileReader();
     reader.addEventListener('load',()=>{
         users.profil = reader.result
-        localStorage.setItem('compte',JSON.stringify(users))
+        localStorage.setItem('compte',JSON.stringify(users));
+        updateCompte()
     })
-
     // users.profil= URL.createObjectURL(inputFile.files[0]);
     reader.readAsDataURL(file)
 
@@ -79,6 +79,7 @@ btnEnvoyer.addEventListener('click',()=>{
             setTimeout(()=>{
                 notification.style.display = 'none';
             },3000)
+            updateCompte()
         }
         else{
             alert('Veuillez entrer un Email')
@@ -100,6 +101,7 @@ supphoto.addEventListener('click',()=>{
     setTimeout(()=>{
         notification.style.display = 'none';
     },3000)
+    updateCompte()
 })
 
 
@@ -120,23 +122,92 @@ btnEnvoyerPassword.addEventListener('click',()=>{
     if(ancienMotDePasse.value != ''){
         if(nouveauMotDePasse.value != ''){
             if(confirmation.value != ''){
-                if(nouveauMotDePasse.value === confirmation.value){
-                    alert('mot de passe modifier')
-                    users.password
+                if (users.password === ancienMotDePasse.value) {
+                    if(nouveauMotDePasse.value === confirmation.value){
+                        users.password = confirmation.value;
+                        localStorage.setItem('compte',JSON.stringify(users));
+    
+                        nouveauMotDePasse.value ='';
+                        confirmation.value = '';
+                        ancienMotDePasse.value = '';
+    
+                        notificationPassword.style.display = "none";
+                        arriereTransparent.style.display = "none";
+    
+                        // notification de confirmation de modification de mot de passe
+                        notification.style.display = 'block';
+                        notification.firstElementChild.style.backgroundColor = '#4A96A6'
+                        notification.firstElementChild.textContent = 'Mot de passe modifier';
+                        notification.lastElementChild.textContent = 'Votre mot de passe à été modifier avec succès';
+                        setTimeout(()=>{
+                            notification.style.display = 'none';
+                        },3000)
+                        updateCompte()
+                    }
+                    else{
+                        // Entrer le nouveau mot de passe
+                        notification.style.display = 'block';
+                        notification.firstElementChild.textContent = 'Modifier mot de passe';
+                        notification.lastElementChild.textContent = "Veuillez entrer le même mot de passe";
+                        setTimeout(()=>{
+                            notification.style.display = 'none';
+                        },3000)
+                    }
                 }
                 else{
-                    alert("Veuillez entrer le même mot de passe")
+                    // Entrer le nouveau mot de passe
+                    notification.style.display = 'block';
+                    notification.firstElementChild.textContent = 'Modifier mot de passe';
+                    notification.lastElementChild.textContent = "Votre ancien mot de passe est incorrect";
+                    setTimeout(()=>{
+                        notification.style.display = 'none';
+                    },3000)
                 }
+                
             }
             else{
-                alert("Veuillez confirmer le nouveau mot de passe")
+                // Entrer le nouveau mot de passe
+                notification.style.display = 'block';
+                notification.firstElementChild.textContent = 'Modifier mot de passe';
+                notification.lastElementChild.textContent = "Veuillez confirmer le nouveau mot de passe";
+                setTimeout(()=>{
+                    notification.style.display = 'none';
+                },3000)
             }
+            
         }
         else{
-            alert("Entrer le nouveau mot de passe")
+            // Entrer le nouveau mot de passe
+            notification.style.display = 'block';
+            notification.firstElementChild.textContent = 'Modifier mot de passe';
+            notification.lastElementChild.textContent = "Veuillez entrer le nouveau mot de passe";
+            setTimeout(()=>{
+                notification.style.display = 'none';
+            },3000)
         }
+        
     }
     else{
-        alert("Entrer l'ancien mot de passe")
+        // Entrer l'ancien mot de passe
+        notification.style.display = 'block';
+        notification.firstElementChild.textContent = 'Modifier mot de passe';
+        notification.lastElementChild.textContent = "Veuillez entrer l'ancien mot de passe";
+        setTimeout(()=>{
+            notification.style.display = 'none';
+        },3000)
     }
 })
+
+// ===============================================
+
+const updateCompte = ()=>{
+    let tabCompte = JSON.parse(localStorage.getItem("key"))
+    console.log(tabCompte[1]);
+
+    let result = tabCompte.filter(el=>el.id !== users.id);
+    console.log(result);
+    result.push(users);
+    tabCompte = result;
+    localStorage.setItem('key',JSON.stringify(tabCompte))
+}
+updateCompte()
