@@ -132,7 +132,9 @@
     margin-top: 10px;
     cursor: pointer;
 }
-
+.textCenter{
+    /* background:red */
+}
 /* ============================================================== */
 /* Body */
 body{

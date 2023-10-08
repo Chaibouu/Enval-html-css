@@ -42,9 +42,10 @@ searchsuivi.addEventListener('input', () => {
       el.rapport.toUpperCase().includes(searchsuivi.value.toUpperCase().split(' '))
   );
   if(searchsuivi.value != ''){
-        tbodysuivi.innerHTML = ''
-        search.forEach(element => {
-          tbodysuivi.innerHTML += `<tr>
+        if(search != ''){
+          tbodysuivi.innerHTML = ''
+          search.forEach(element => {
+            tbodysuivi.innerHTML += `<tr>
                                     <td class="tr text">${element.lot}</td>
                                     <td class="text">${element.etat}</td>
                                     <td class="text">${element.date}</td>
@@ -53,9 +54,15 @@ searchsuivi.addEventListener('input', () => {
                                       <a href="suividetail.html" class="voir"><button>voir</button></a>
                                     </td>
                                   </tr>`
-      });
+           });
+        }
+        else{
+          tbodysuivi.innerHTML = ''
+          tbodysuivi.innerHTML = `<tr><td class="tr TR text"  colspan="5">Aucune donnée à afficher</td></tr>` 
+        }
   }
   else{
+    tbodysuivi.innerHTML = ''
     suivis.forEach(element => {
       tbodysuivi.innerHTML += `<tr>
                                 <td class="tr text">${element.lot}</td>

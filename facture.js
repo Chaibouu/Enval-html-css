@@ -17,18 +17,28 @@ searchfacture.addEventListener('input', () => {
     search = factures.filter((el) =>
         el.laboratoire.toUpperCase().includes(searchfacture.value.toUpperCase().split(' '))
     );
+    console.log(search)
     if(searchfacture.value != ''){
-        tbodyfacture.innerHTML = ''
-         search.forEach(element => {
-        tbodyfacture.innerHTML += `<tr  >
-                                        <td class="tr text">${element.facture}</td>
-                                        <td class="text">${element.laboratoire}</td>
-                                        <td class="text">${element.date}</td>
-                                        <td class="TR text"><button>voir</button></td>
-                                    </tr>`
-    });
+        
+        if(search !='' ){
+            tbodyfacture.innerHTML = ''
+            search.forEach(element => {
+            tbodyfacture.innerHTML += `<tr  >
+                                           <td class="tr text">${element.facture}</td>
+                                           <td class="text">${element.laboratoire}</td>
+                                           <td class="text">${element.date}</td>
+                                           <td class="TR text"><button>voir</button></td>
+                                       </tr>`
+            });
+        }
+        else{
+            tbodyfacture.innerHTML = ''
+            tbodyfacture.innerHTML = `<tr><td class="tr TR text"  colspan="4">Aucune donnée à afficher</td></tr>` 
+        }
+        
     }
     else{
+        tbodyfacture.innerHTML = ''
         factures.forEach(element => {
             tbodyfacture.innerHTML += `<tr  >
                                             <td class="tr text">${element.facture}</td>
