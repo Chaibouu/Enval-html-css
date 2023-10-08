@@ -9,6 +9,10 @@ let btnretour = document.querySelector('.btnretour');
 let modifphoto = document.querySelector('.modifphoto');
 let supphoto = document.querySelector('.supphoto');
 let notification = document.querySelector('.notification');
+let btnModifierlecompte = document.querySelector('.btnModifierlecompte');
+let btnSupprimerlecompte = document.querySelector('.btnSupprimerlecompte');
+let notificationPassword = document.querySelector('.notificationPassword');
+let arriereTransparent = document.querySelector('.arriereTransparent');
 
 
 let users = JSON.parse(localStorage.getItem("compte"))
@@ -102,3 +106,8 @@ btnretour.addEventListener("click", ()=> {
     
 });
 
+// button modifier mot de passe
+btnModifierlecompte.addEventListener('click',()=>{
+    notificationPassword.style.display = "block";
+    arriereTransparent.style.display = "block";
+})

@@ -1,4 +1,6 @@
-
+body{
+    position:relative
+}
 .notification{
     position: absolute;
     background-color: white;
@@ -21,14 +23,23 @@
 .notificationPassword{
     position: absolute;
     background-color: white;
-    min-width: 100px;
+    min-width: 300px;
     border-radius: 10px;
     text-align: center;
-    border: 1px solid rgb(182, 179, 179);
+    border: 2px solid #4A96A6;
     top: 5%;
-    left:40%
+    left:40%;
+    display:none;
+    z-index:1;
 }
-
+.arriereTransparent{
+    position: absolute;
+    background:rgba(248, 247, 247, 0.708);
+    width:100vw;
+    height:100vh;
+    display:none;
+    cursor:default;
+}
 .notificationPassword>h3{
     background-color: #4A96A6;
     padding: 10px;
@@ -36,6 +47,40 @@
     color: #fff;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    font-size:25px;
+}
+.notificationPassword>form{
+    padding: 10px;
+    display:flex;
+    justify-content:center;
+    align-items:start;
+    width: 350px;
+    background:#fff;
+    border-radius: 8px;
+}
+.notificationPassword>form>input{
+    padding:5px;
+    width: 90%;
+    background-color: #e8e6e6c0;
+    border-radius: 5px;
+    font-size: larger;
+    padding: 5px;
+    margin: 10px auto;
+    border: 2px solid rgba(227, 226, 226, 0.421);
+}
+.notificationPassword>form>input:focus{
+    outline-color: greenyellow;
+  }
+.notificationPassword>form>label{
+  margin-left:10px;
+  color: rgba(128, 128, 128, 0.88);
+}
+.notificationPassword>form>button{
+    width: 95%;
+    padding:10px;
+    font-size:18px;
+    margin-bottom:10px;
+    margin-top:5px;
 }
 .notification>p{
     padding: 5px;
