@@ -8,13 +8,14 @@ let btnEnvoyer = document.querySelector('#btnEnvoyer');
 let btnretour = document.querySelector('.btnretour');
 let modifphoto = document.querySelector('.modifphoto');
 let supphoto = document.querySelector('.supphoto');
+let notification = document.querySelector('.notification');
 
 
 let users = JSON.parse(localStorage.getItem("compte"))
 modifphoto.addEventListener('click',()=>{
     inputFile.click();
-    
 })
+
 inputFile.addEventListener('change',()=>{
     let file = inputFile.files[0];
     avatar.src = URL.createObjectURL(file);
@@ -28,6 +29,15 @@ inputFile.addEventListener('change',()=>{
 
     // users.profil= URL.createObjectURL(inputFile.files[0]);
     reader.readAsDataURL(file)
+
+    // notification de confirmation de suppression de la photo de profil
+    notification.style.display = 'block';
+    notification.firstElementChild.style.backgroundColor = '#4A96A6'
+    notification.firstElementChild.textContent = 'Photo de profil modifier';
+    notification.lastElementChild.textContent = 'Votre photo de profil à été modifier avec succès';
+    setTimeout(()=>{
+        notification.style.display = 'none';
+    },3000)
 
 })
 
@@ -52,6 +62,15 @@ btnEnvoyer.addEventListener('click',()=>{
             userName.value='';
             email.value='';
             textarea.value='';
+
+            // notification de confirmation de la modification du profil
+            notification.style.display = 'block';
+            notification.firstElementChild.style.backgroundColor = '#4A96A6'
+            notification.firstElementChild.textContent = 'Profil modifier';
+            notification.lastElementChild.textContent = 'Votre profil à été modifier avec succès';
+            setTimeout(()=>{
+                notification.style.display = 'none';
+            },3000)
         }
         else{
             alert('Veuillez entrer un Email')
@@ -67,6 +86,12 @@ supphoto.addEventListener('click',()=>{
     users.profil= "avatar.jpg";
     localStorage.setItem('compte',JSON.stringify(users))
     showavatar();
+    // notification de confirmation de suppression de la photo de profil
+    notification.style.display = 'block';notification.firstElementChild.textContent = 'Photo de profil supprimer';
+    notification.lastElementChild.textContent = 'Votre photo de profil à été supprimer avec succès';
+    setTimeout(()=>{
+        notification.style.display = 'none';
+    },3000)
 })
 
 

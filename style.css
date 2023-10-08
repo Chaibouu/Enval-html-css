@@ -18,6 +18,9 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+.notification>p{
+    padding: 5px;
+}
 /* parametrès */
 .entetepara{
     display: flex;
