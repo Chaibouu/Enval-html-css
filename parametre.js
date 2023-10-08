@@ -5,6 +5,7 @@ let userName = document.querySelector('#userName');
 let email = document.querySelector('#email');
 let loginProfil = document.querySelector('#loginProfil');
 let btnEnvoyer = document.querySelector('#btnEnvoyer');
+let btnretour = document.querySelector('.btnretour');
 let modifphoto = document.querySelector('.modifphoto');
 let supphoto = document.querySelector('.supphoto');
 
@@ -41,10 +42,38 @@ showavatar();
 
 //button modifier username email biographie
 btnEnvoyer.addEventListener('click',()=>{
-    
-    users.userName = userName.value;
-    users.email = email.value;
-    users.biographie = textarea.value;
-    localStorage.setItem('compte',JSON.stringify(users))
+    if (userName !='') {
+        if (email.value !='') {
+            users.userName = userName.value;
+            users.email = email.value;
+            users.biographie = textarea.value;
+            localStorage.setItem('compte',JSON.stringify(users))
 
+            userName.value='';
+            email.value='';
+            textarea.value='';
+        }
+        else{
+            alert('Veuillez entrer un Email')
+        }
+    }
+    else{
+        alert('Veuillez entrer un Nom')
+    }
+    
 })
+// button supprimer la photo de profil
+supphoto.addEventListener('click',()=>{
+    users.profil= "avatar.jpg";
+    localStorage.setItem('compte',JSON.stringify(users))
+    showavatar();
+})
+
+
+// button renvoyer a la page d'acceuil
+btnretour.addEventListener("click", ()=> {
+    //la méthode window.location.href pour rediriger vers la page d'accueil
+    window.location.href = "http://127.0.0.1:5502/dashboard.html";
+    
+});
+
