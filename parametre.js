@@ -200,11 +200,15 @@ btnEnvoyerPassword.addEventListener('click',()=>{
 
 // button supprimer le compte
 btnSupprimerlecompte.addEventListener('click',()=>{
-    let tabCompte = JSON.parse(localStorage.getItem("key"))
-    let result = tabCompte.filter(el=>el.id !== users.id);
-    tabCompte = result;
-    localStorage.setItem('key',JSON.stringify(tabCompte));
-    window.location.href = "index.html";
+   let a = confirm("Voulez-vous supprimer votre compte")
+    if (a) {
+        let tabCompte = JSON.parse(localStorage.getItem("key"))
+        let result = tabCompte.filter(el=>el.id !== users.id);
+        tabCompte = result;
+        localStorage.setItem('key',JSON.stringify(tabCompte));
+        window.location.href = "index.html";
+    }
+    
 })
 
 
