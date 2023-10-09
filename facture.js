@@ -1,4 +1,8 @@
 let tbodyfacture = document.querySelector('.tbodyfacture');
+let triFacture = document.querySelector('.triFacture');
+let triLaboratoire = document.querySelector('.triLaboratoire');
+let triDate = document.querySelector('.triDate');
+let triRapport = document.querySelector('.triRapport');
 let searchfacture = document.querySelector('#searchfacture');
 let loginProfil = document.querySelector('#loginProfil');
 
@@ -72,6 +76,41 @@ searchfacture.addEventListener('input', () => {
 let users = JSON.parse(localStorage.getItem("compte"))
 let showavatar = ()=>{
   loginProfil.src = users.profil;
-  console.log(users.profil)
 }
 showavatar();
+// ================================
+// button pour trier les facture
+let xxxx = 0;
+triFacture.addEventListener('click',()=>{
+    // function compareNumbers(a, b) {
+    //     return a - b;
+    // }
+    // factures.forEach(element => {
+    //     let fact = element.map(el=> element.facture)
+    //     console.log(fact);
+    // });
+    // let fact = factures.map((el,index)=> el.facture)
+    //      console.log(fact.sort(compareNumbers));
+
+    // Triez le tableau en fonction de la propriété 'facture' de manière décroissante
+  
+    if (xxxx=1) {
+        factures.sort((a, b) => {
+            return b.facture.localeCompare(a.facture);
+        });
+        
+        // Affichez le tableau trié
+        console.log(factures);
+        console.log(xxxx);
+    }
+    else{
+        factures.sort((a, b) => {
+            return a.facture.localeCompare(b.facture);
+        });
+        
+        // Affichez le tableau trié
+        console.log(factures);
+        console.log(x);
+    }
+    
+})
