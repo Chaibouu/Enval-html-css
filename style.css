@@ -171,7 +171,10 @@ body{
 .corpspara form>input:focus{
     outline-color: greenyellow;
   }
-.avatar{
+#avatar{
+    min-width: 260px;
+    min-height: 260px;
+    background-color: red;
     border-radius: 100%;
 }
 .containerform{
