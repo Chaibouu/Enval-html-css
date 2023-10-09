@@ -203,7 +203,8 @@ btnSupprimerlecompte.addEventListener('click',()=>{
     let tabCompte = JSON.parse(localStorage.getItem("key"))
     let result = tabCompte.filter(el=>el.id !== users.id);
     tabCompte = result;
-    localStorage.setItem('key',JSON.stringify(tabCompte))
+    localStorage.setItem('key',JSON.stringify(tabCompte));
+    window.location.href = "index.html";
 })
 
 
