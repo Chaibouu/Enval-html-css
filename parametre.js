@@ -200,7 +200,10 @@ btnEnvoyerPassword.addEventListener('click',()=>{
 
 // button supprimer le compte
 btnSupprimerlecompte.addEventListener('click',()=>{
-    
+    let tabCompte = JSON.parse(localStorage.getItem("key"))
+    let result = tabCompte.filter(el=>el.id !== users.id);
+    tabCompte = result;
+    localStorage.setItem('key',JSON.stringify(tabCompte))
 })
 
 
@@ -209,10 +212,8 @@ btnSupprimerlecompte.addEventListener('click',()=>{
 
 const updateCompte = ()=>{
     let tabCompte = JSON.parse(localStorage.getItem("key"))
-    console.log(tabCompte[1]);
 
     let result = tabCompte.filter(el=>el.id !== users.id);
-    console.log(result);
     result.push(users);
     tabCompte = result;
     localStorage.setItem('key',JSON.stringify(tabCompte))
