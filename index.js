@@ -14,35 +14,37 @@ let user={
     profil:'',
     biographie:'',
 }
-let userss =[
-    {
-        id: 1,
-        userName:'chaibou',
-        password:'chaibou',
-        email:'chaibouabdoulwahab@gmail.com',
-        answer:'metal',
-        profil:"blob:http://127.0.0.1:5502/4413d9d7-9e95-4df2-9c4f-52187ad829f1",
-        biographie:'dev junior',
-    },
-    {
-        id: 2,
-        userName:'admin',
-        password:'admin',
-        email:'admin@gmail.com',
-        answer:'admin',
-        profil:'',
-        biographie:'admin',
-    },
-    {
-        id: 3,
-        userName:'tt',
-        password:'tt',
-        email:'tt@gmail.com',
-        answer:'tt',
-        profil:'',
-        biographie:'tt',
-    }
-]
+let lesutilisateur = ()=>{
+    let userss =[
+        {
+            id: 1,
+            userName:'chaibou',
+            password:'chaibou',
+            email:'chaibouabdoulwahab@gmail.com',
+            answer:'metal',
+            profil:"blob:http://127.0.0.1:5502/4413d9d7-9e95-4df2-9c4f-52187ad829f1",
+            biographie:'dev junior',
+        },
+        {
+            id: 2,
+            userName:'admin',
+            password:'admin',
+            email:'admin@gmail.com',
+            answer:'admin',
+            profil:'',
+            biographie:'admin',
+        },
+        {
+            id: 3,
+            userName:'tt',
+            password:'tt',
+            email:'tt@gmail.com',
+            answer:'tt',
+            profil:'',
+            biographie:'tt',
+        }
+    ]
+}
 
 if (!localStorage.getItem('key')) {
     localStorage.setItem('key',JSON.stringify(userss))

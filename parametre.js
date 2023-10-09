@@ -198,6 +198,13 @@ btnEnvoyerPassword.addEventListener('click',()=>{
     }
 })
 
+// button supprimer le compte
+btnSupprimerlecompte.addEventListener('click',()=>{
+    
+})
+
+
+
 // ===============================================
 
 const updateCompte = ()=>{
