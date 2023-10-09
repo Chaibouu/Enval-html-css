@@ -2,7 +2,6 @@ let tbodyfacture = document.querySelector('.tbodyfacture');
 let triFacture = document.querySelector('.triFacture');
 let triLaboratoire = document.querySelector('.triLaboratoire');
 let triDate = document.querySelector('.triDate');
-let triRapport = document.querySelector('.triRapport');
 let searchfacture = document.querySelector('#searchfacture');
 let loginProfil = document.querySelector('#loginProfil');
 
@@ -79,38 +78,100 @@ let showavatar = ()=>{
 }
 showavatar();
 // ================================
-// button pour trier les facture
-let xxxx = 0;
-triFacture.addEventListener('click',()=>{
-    // function compareNumbers(a, b) {
-    //     return a - b;
-    // }
-    // factures.forEach(element => {
-    //     let fact = element.map(el=> element.facture)
-    //     console.log(fact);
-    // });
-    // let fact = factures.map((el,index)=> el.facture)
-    //      console.log(fact.sort(compareNumbers));
 
-    // Triez le tableau en fonction de la propriété 'facture' de manière décroissante
-  
-    if (xxxx=1) {
-        factures.sort((a, b) => {
-            return b.facture.localeCompare(a.facture);
+
+// button pour trier les facture
+let fois = 0;
+const affiContent = (aa)=>{
+    tbodyfacture.innerHTML ='';
+        aa.forEach(element => {
+            tbodyfacture.innerHTML += `<tr  >
+                                            <td class="tr text">${element.facture}</td>
+                                            <td class="text">${element.laboratoire}</td>
+                                            <td class="text">${element.date}</td>
+                                            <td class="TR text"><button>voir</button></td>
+                                        </tr>`
         });
-        
-        // Affichez le tableau trié
-        console.log(factures);
-        console.log(xxxx);
+}
+
+// button pour trier les facture
+triFacture.addEventListener('click',()=>{
+// Triez le tableau en fonction de la propriété 'facture' de manière décroissante
+  
+    if (fois == 0) {
+        let fact = '';
+        factures.sort((a, b) => {
+            triFacture.innerHTML = 'Commande'+`<i class="fa-solid fa-arrow-down-z-a iconfiltre"></i>`
+            fact = b.facture.localeCompare(a.facture);
+            return fact
+        });
+        fois=1;
+        // fonction pour afficher le contenue
+        affiContent(factures)
     }
     else{
+        triFacture.innerHTML = 'Commande'+`<i class="fa-solid fa-arrow-down-a-z iconfiltre"></i>`
         factures.sort((a, b) => {
             return a.facture.localeCompare(b.facture);
         });
         
-        // Affichez le tableau trié
-        console.log(factures);
-        console.log(x);
+        fois=0;
+        // fonction pour afficher le contenue
+        affiContent(factures)
+    }
+    
+})
+// button pour trier les laboratoire
+triLaboratoire.addEventListener('click',()=>{
+// Triez le tableau en fonction de la propriété 'facture' de manière décroissante
+  
+    if (fois == 0) {
+        triLaboratoire.innerHTML = 'Commande'+`<i class="fa-solid fa-arrow-down-z-a iconfiltre"></i>`
+        let fact = '';
+        factures.sort((a, b) => {
+            fact = b.laboratoire.localeCompare(a.laboratoire);
+            return fact
+        });
+        fois=1;
+        // fonction pour afficher le contenue
+        affiContent(factures)
+    }
+    else{
+        triLaboratoire.innerHTML = 'Commande'+`<i class="fa-solid fa-arrow-down-a-z iconfiltre"></i>`
+        factures.sort((a, b) => {
+            return a.laboratoire.localeCompare(b.laboratoire);
+        });
+        
+        fois=0;
+        // fonction pour afficher le contenue
+        affiContent(factures)
+    }
+    
+})
+// button pour trier les date
+triDate.addEventListener('click',()=>{
+// Triez le tableau en fonction de la propriété 'facture' de manière décroissante
+  
+    if (fois == 0) {
+        triDate.innerHTML = 'Commande'+`<i class="fa-solid fa-arrow-down-z-a iconfiltre"></i>`
+        let fact = '';
+        factures.sort((a, b) => {
+            fact = b.date.localeCompare(a.date);
+            return fact
+        });
+        fois=1;
+        // fonction pour afficher le contenue
+        affiContent(factures)
+    }
+    else{
+        triDate.innerHTML = 'Commande'+`<i class="fa-solid fa-arrow-down-a-z iconfiltre"></i>`
+        factures.sort((a, b) => {
+            return a.date.localeCompare(b.date);
+        });
+        
+        fois=0;
+        // fonction pour afficher le contenue
+        affiContent(factures)
     }
     
 })
