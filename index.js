@@ -108,6 +108,7 @@ connexion.addEventListener('click',()=>{
                 else{
                     email.disabled=true;
                     password.disabled=true;
+                    connexion.disabled=true;
                     // fonction pour le minuteur
                     const chronos = ()=>{
                         if (minute == 0 && seconde == 0) {
